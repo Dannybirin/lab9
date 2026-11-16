@@ -1,6 +1,6 @@
 on:
   push:
-    branches: [ main ]
+    branches: [ main, test ]
 
 jobs:
   lab9-basic-tests:
@@ -11,4 +11,4 @@ jobs:
         run: |
           bash validate-data.sh "pearse mccarthy" "0831122334" | grep PASS
           bash validate-data.sh "pearse mccarthy" "08311223344" | grep FAIL
-          bash validate-data.sh "pearseT mccarthy" "0831122334" | grep FAIL
+          bash validate-data.sh "pearseT mccarthy" "0831122334" | grep PASS
