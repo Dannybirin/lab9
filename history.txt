@@ -1,0 +1,38 @@
+  506  gh repo create lab9 --public
+  507  git clone git@github.com:Dannybirin/lab9.git
+  508  cd lab9
+  509  gh label create EPIC --color 1f439f
+  510  gh issue create --title "do lab9" --label EPIC --assignee "@me" --body "lab9 epic"
+  511  gh issue create --title "create validate-data script"  --label enhancement --assignee "@me" --body "bash script"
+  512  gh issue create --title "create yaml test script" --label enhancement --assignee "@me" --body "github action"
+  513  nano validate-data.sh
+  514  bash validate-data.sh "pearse mccarthy" "0831122334"
+  515  bash validate-data.sh "pearse mccarthy" "08311223344"
+  516  bash validate-data.sh "pearseT mccarthy" "0831122334"
+  517  nano validate-data.sh
+  518  mkdir -p .github/workflows
+  519  nano .github/workflows/basictests.yaml
+  520  git as
+  521  git add validate-data.sh 
+  522  nano .github/workflows/basictests.yaml
+  523  git add .github/workflows/basictests.yaml
+  524  git commit -m "add script and action, fixes #2, fixes #3"
+  525  git push origin main
+  526  git mv .github/workflows/basictests.yaml .github/workflows/basictests.yml
+  527  git commit -m "rename to basictests.yml"
+  528  git push origin main
+  529  gh issue create --title "create lab9 project" --label enhancement --
+  530  gh issue edit 4 --add-assignee "@me"
+  531  gh issue close 4
+  532  gh issue create --title "create test branch" --label enhancement --assignee "@me" --body "test branch"
+  533  git checkout -b test
+  534  nano validate-data.sh
+  535  git add validate-data.sh
+  536  git commit -m "name max 20"
+  537  git push -u origin test
+  538  nano .github/workflows/basictests.yaml
+  539  nano .github/workflows/basictests.yml
+  540  git add .github/workflows/basictests.yml
+  541  git commit -m "run action on test branch, fixes #5"
+  542  git push
+  543  history > history.txt
